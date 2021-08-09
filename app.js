@@ -23,7 +23,7 @@ app.get("/:articleName", function(req, res){
         KeyConditionExpression: 'title_id = quarter_life_crisis'
     }
     database.query(params, function(err, data){
-        res.send(data)
+        res.send(err)
         if(err){
             res.send("failed")
         }else{
