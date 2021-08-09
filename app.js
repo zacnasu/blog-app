@@ -18,12 +18,12 @@ app.get("/", function(req, res) {
 
 app.get("/:articleName", function(req, res){
     console.log(req.params.articleName)
-    res.send(req.params.articleName)
     params = {
         TableName: title_table,
         KeyConditionExpression: 'title_id = quarter_life_crisis'
     }
     database.query(params, function(err, data){
+        res.send(data)
         if(err){
             res.send("failed")
         }else{
