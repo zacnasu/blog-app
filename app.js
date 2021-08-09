@@ -27,8 +27,7 @@ app.get("/:articleName", function(req, res){
         ExpressionAttributeValues: {
             ":title_id": { "S": "quarter_life_crisis" }
         }
-    };
- }
+    }
     database.query(params, function(err, data){
         res.send(err)
         if(err){
