@@ -17,6 +17,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/:articleName", function(req, res){
+    console.log(req.params.articleName)
     params = {
         TableName: title_table,
         KeyConditionExpression: 'title_id = i:',
