@@ -16,8 +16,11 @@ app.get("/", function(req, res) {
     res.render("home");
 });
 
+// app.get("/all_posts", function(req, res){
+//     res.render("")
+// })
+
 app.get("/:articleName", function(req, res){
-    console.log(req.params.articleName)
     params = {
         TableName: "Titles",
         KeyConditionExpression: "#title_id = :title_id",
@@ -25,7 +28,7 @@ app.get("/:articleName", function(req, res){
             "#title_id": "title_id"
         },
         ExpressionAttributeValues: {
-            ":title_id": "quarter_life_crisis"
+            ":title_id": req.params.articleName
         }
     }
     database.query(params, function(err, data){
