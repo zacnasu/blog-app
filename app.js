@@ -29,7 +29,6 @@ app.get("/:articleName", function(req, res){
         }
     }
     database.query(params, function(err, data){
-        res.send(err)
         if(err){
             res.send("failed")
         }else{
