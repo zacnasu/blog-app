@@ -2,7 +2,7 @@ const AWS = require('aws-sdk')
 const express = require("express");
 const app = express();
 
-AWS.config.region = process.env.REGION;
+AWS.config.region = "us-east-2"
 
 const title_table = process.env.TITLE_DATABASE_NAME;
 const posts_table = process.env.POSTS_DATABASE_NAME;
@@ -23,7 +23,7 @@ app.get("/:articleName", function(req, res){
         KeyConditionExpression: 'title_id = quarter_life_crisis'
     }
     database.query(params, function(err, data){
-        res.send(process.env.REGION)
+        res.send(err)
         if(err){
             res.send("failed")
         }else{
