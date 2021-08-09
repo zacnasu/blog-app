@@ -19,7 +19,7 @@ app.get("/", function(req, res) {
 app.get("/:articleName", function(req, res){
     console.log(req.params.articleName)
     params = {
-        TableName: title_table,
+        TableName: "Titles",
         KeyConditionExpression: 'title_id = :title_id',
         ExpressionAttributeValues: {
             ':title_id': {'S': 'quarter_life_crisis'}
