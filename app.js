@@ -7,7 +7,7 @@ AWS.config.region = process.env.REGION;
 const title_table = process.env.TITLE_DATABASE_NAME;
 const posts_table = process.env.POSTS_DATABASE_NAME;
 
-const database = new AWS.DynamoDB();
+const database = new AWS.DynamoDB.DocumentClient();
 
 app.set('view engine', 'ejs');
 
@@ -22,7 +22,7 @@ app.get("/:articleName", function(req, res){
         TableName: title_table,
         KeyConditionExpression: 'title_id = i:',
         ExpressionAttributeValues: {
-            ':i': req.params.articleName
+            ':i': "quarter_life_crisis"
         }
     }
     database.query(params, function(err, data){
