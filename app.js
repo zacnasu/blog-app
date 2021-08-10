@@ -16,12 +16,21 @@ app.get("/", function(req, res) {
     res.render("home");
 });
 
-// app.get("/all_posts", function(req, res){
-//     res.render("")
-// })
+app.get("/all_posts", function(req, res){
+    const params = {
+        TableName: title_table
+    }
+    database.scan(params, function(err, data){
+        if(err){
+            res.send("failed")
+        }else{
+            res.send(data)
+        }
+    })
+})
 
 app.get("/:articleName", function(req, res){
-    params = {
+    const params = {
         TableName: title_table,
         KeyConditionExpression: "#title_id = :title_id",
         ExpressionAttributeNames: {
