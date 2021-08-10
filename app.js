@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
 
 app.get("/:articleName", function(req, res){
     params = {
-        TableName: "Titles",
+        TableName: title_table,
         KeyConditionExpression: "#title_id = :title_id",
         ExpressionAttributeNames: {
             "#title_id": "title_id"
