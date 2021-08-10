@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 
 app.get("/", function(req, res) {
-    res.render("home");
+    res.render("pages/home");
 });
 
 app.get("/all_posts", function(req, res){
@@ -22,9 +22,9 @@ app.get("/all_posts", function(req, res){
     }
     database.scan(params, function(err, data){
         if(err || !data){
-            res.render("error");
+            res.render("pages/error");
         }else{
-            res.render("all_posts")
+            res.render("pages/all_posts")
         }
     })
 })
@@ -42,9 +42,9 @@ app.get("/:articleName", function(req, res){
     }
     database.query(params, function(err, data){
         if(err || !data){
-            res.render("error")
+            res.render("pages/error")
         }else{
-            res.render(post)
+            res.render("pages/post")
         }
     })
 });
