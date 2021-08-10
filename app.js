@@ -21,10 +21,10 @@ app.get("/all_posts", function(req, res){
         TableName: title_table
     }
     database.scan(params, function(err, data){
-        if(err){
-            res.send("failed")
+        if(err || !data){
+            res.render("error");
         }else{
-            res.send(data)
+            res.render("all_posts")
         }
     })
 })
@@ -41,10 +41,10 @@ app.get("/:articleName", function(req, res){
         }
     }
     database.query(params, function(err, data){
-        if(err){
-            res.send("failed")
+        if(err || !data){
+            res.render("error")
         }else{
-            res.send(data)
+            res.render(post)
         }
     })
 });
