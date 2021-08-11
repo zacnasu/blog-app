@@ -42,10 +42,10 @@ app.get("/:articleName", function(req, res){
         }
     }
     database.query(params, function(err, data){
-        if(err || !data){
+        if(err || !data || data.Items === []){
             res.render("pages/error")
         }else{
-            res.render("pages/post")
+            res.render("pages/post", {post_data: data.Items})
         }
     })
 });
