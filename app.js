@@ -45,6 +45,7 @@ app.get("/:articleName", function(req, res){
         if(err || !data || data.Items === []){
             res.render("pages/error")
         }else{
+            res.send(data)
             res.render("pages/post", {post_data: data.Items})
         }
     })
