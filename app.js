@@ -33,6 +33,7 @@ app.get("/:articleName", function(req, res){
     const params = {
         TableName: title_table,
         KeyConditionExpression: "#title_id = :title_id",
+        ScanIndexForward: false,
         ExpressionAttributeNames: {
             "#title_id": "title_id"
         },
