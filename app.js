@@ -24,7 +24,7 @@ app.get("/all_posts", function(req, res){
         if(err || !data){
             res.render("pages/error");
         }else{
-            res.render("pages/all_posts")
+            res.render("pages/all_posts", {posts: data.Items})
         }
     })
 })
