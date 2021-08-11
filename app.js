@@ -31,7 +31,7 @@ app.get("/all_posts", function(req, res){
 
 app.get("/:articleName", function(req, res){
     const params = {
-        TableName: title_table,
+        TableName: posts_table,
         KeyConditionExpression: "#title_id = :title_id",
         ScanIndexForward: false,
         ExpressionAttributeNames: {
