@@ -26,7 +26,8 @@
             <tbody>
                 <tr>
                 <% posts.forEach(post => { %>
-                    <td><a href="http://zacswordvomit.com/".concat(<%= post.title_id %>) >
+                    <% let link = "http://zacswordvomit.com/".concat(post.title_id) %>
+                    <td><a href=<%= link %>link>
                         <%= post.title_id %>
                     </a></td>
                     <td><%= post.date %></td>
