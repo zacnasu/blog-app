@@ -13,5 +13,3 @@ The purpose of this blog app was originally to create a place for myself to post
 * Bootstrap
 * Express
 * EJS
-
-If you're interested in seeing the website the link is http://zacswordvomit.com though please keep in mind that the formatting and spacing will be off. I decided to accept it as imperfectly perfect for the time being and spend my time learning other things.
